@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StyleSheet, TextInput, Button, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Review from './src/screens/Review';
@@ -10,6 +9,10 @@ export default function App() {
   const[disciplinaAluno, setDisciplinaAluno]=useState("");
   const[descricaoAluno, setDescricaoAluno]=useState("");
   const[mostrarDados, setMostrarDados]=useState(false);
+
+  useEffect(() => {
+    console.log("Componente Review carregado, formulário preenchido.")
+  }, [mostrarDados]);
 
   return (
     <SafeAreaView style={styles.container}>
