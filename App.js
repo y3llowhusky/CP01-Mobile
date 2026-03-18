@@ -14,6 +14,10 @@ export default function App() {
     console.log("Componente Review carregado, formulário preenchido.")
   }, [mostrarDados]);
 
+  useEffect(() => {
+    console.log("Aplicação inicializada...");
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <Image 
