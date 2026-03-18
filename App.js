@@ -13,12 +13,35 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image/>
+      <Image 
+        source={require("./assets/imageform.jpg")}
+        style={styles.image}
+      />
 
-      <TextInput placeholder="Digite seu nome" onChangeText={setNomeAluno}/>
-      <TextInput placeholder="Digite seu curso" onChangeText={setCursoAluno}/>
-      <TextInput placeholder="Digite sua disciplina" onChangeText={setDisciplinaAluno}/>
-      <TextInput placeholder="Digite sua descrição" onChangeText={setDescricaoAluno}/>
+      <TextInput 
+        placeholder="Digite seu nome" 
+        onChangeText={setNomeAluno}
+        style={styles.input}
+      />
+
+      <TextInput 
+        placeholder="Digite seu curso" 
+        onChangeText={setCursoAluno}
+        style={styles.input}
+      />
+
+      <TextInput 
+        placeholder="Digite sua disciplina" 
+        onChangeText={setDisciplinaAluno}
+        style={styles.input}
+      />
+
+      <TextInput 
+        placeholder="Digite sua descrição" 
+        onChangeText={setDescricaoAluno}
+        style={styles.fatInput}
+        multiline={true}
+      />
 
       <Button 
         title="Enviar dados" 
@@ -37,9 +60,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 5
   },
-  image:{resizeMode:"center"},
+  image:{
+    height: 125,
+    width: 300,
+    resizeMode: "stretch",
+    marginBottom: 10,
+    borderRadius: 25
+  },
   input:{
+    height:40,
+    backgroundColor:"#ccc",
+    width:300,
+    borderRadius:10
+  },
+  fatInput:{
+    height:80,
     backgroundColor:"#ccc",
     width:300,
     borderRadius:10
